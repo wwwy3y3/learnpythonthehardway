@@ -9,7 +9,7 @@ rival= boxer.Boxer("enemy")
 
 # game begin
 # show info of me and rival
-while you.blood>0 or rival.blood>0:
+while you.blood>=0 and rival.blood>=0:
 	print you
 	print rival
 

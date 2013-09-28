@@ -3,9 +3,9 @@ import random
 # result
 def showResult(boxer1, boxer2):
 	if boxer1.blood > boxer2.blood:
-		print "you lose"
-	elif boxer1.blood < boxer2.blood:
 		print "you win"
+	elif boxer1.blood < boxer2.blood:
+		print "you lose"
 	else:
 		print "no win or lose, fair!"
 
@@ -19,13 +19,16 @@ def options(boxer1, boxer2):
 	choice= raw_input(str)
 
 	# action
-	if str == "1":
+	if choice == "1":
 		boxer1.punch()
-	elif str == "2":
+	elif choice == "2":
+		boxer1.defend()
+	else:
+		print "unreconized move... so you stay in defend"
 		boxer1.defend()
 
 	# rival take action
-	rand= random.randrange(0, 2)
+	rand= bool(random.getrandbits(1))
 	if rand:
 		# rival punch
 		boxer2.punch()
@@ -42,7 +45,7 @@ def fight(boxer1, boxer2):
 		# nothing happend
 		pass
 	elif boxer1.status == boxer2.status == 'punch':
-		rand= random.randrange(0, 2)
+		rand= bool(random.getrandbits(1))
 		if rand:
 			# boxer2 win
 			boxer1.hurtBy(boxer2)
