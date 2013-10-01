@@ -20,7 +20,8 @@ s= u'哈囉你好wwwy3y3'
 for char in s:
 	print char.encode('utf-8')
 
-
+print s[0:3].encode('utf-8')
+print s[1:5].encode('utf-8')
 # pro tip 1
 # Unicode sandwitch
 # bytes on the outside, unicode on the inside
